@@ -1,32 +1,37 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Agregar Estudiante</title>
-</head>
-<body>
-    <h2>Agregar Estudiante</h2>
-    <form method="POST">
-        <label>Nombre: *</label><br>
-        <input type="text" name="Nombre" required><br><br>
-
-        <label>Fecha de Nacimiento:</label><br>
-        <input type="date" name="FechaNacimiento"><br><br>
-
-        <label>Dirección:</label><br>
-        <input type="text" name="Direccion"><br><br>
-
-        <label>Teléfono:</label><br>
-        <input type="text" name="Telefono"><br><br>
-
-        <label>Parroquia ID: *</label><br>
-        <input type="number" name="Parroquia_Id_Parroquia" required><br><br>
-
-        <label>Persona ID: *</label><br>
-        <input type="number" name="Persona_Id_Persona" required><br><br>
-
-        <button type="submit">Guardar</button>
+{% extends "layout.html" %}
+{% block title %}Agregar Estudiante{% endblock %}
+{% block content %}
+<div class="card p-4">
+    <h2 class="mb-4"><i class="bi bi-person-plus"></i> Agregar Estudiante</h2>
+    <form method="POST" class="row g-3 needs-validation" novalidate>
+        <div class="col-md-6">
+            <label class="form-label">Nombre *</label>
+            <input type="text" name="Nombre" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Fecha de Nacimiento</label>
+            <input type="date" name="FechaNacimiento" class="form-control">
+        </div>
+        <div class="col-12">
+            <label class="form-label">Dirección</label>
+            <input type="text" name="Direccion" class="form-control">
+        </div>
+        <div class="col-md-6">
+            <label class="form-label">Teléfono</label>
+            <input type="text" name="Telefono" class="form-control" pattern="\d{10}" title="Debe tener 10 dígitos">
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Parroquia ID *</label>
+            <input type="number" name="Parroquia_Id_Parroquia" class="form-control" required>
+        </div>
+        <div class="col-md-3">
+            <label class="form-label">Persona ID *</label>
+            <input type="number" name="Persona_Id_Persona" class="form-control" required>
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-success"><i class="bi bi-save"></i> Guardar</button>
+            <a href="/ver" class="btn btn-secondary"><i class="bi bi-x-circle"></i> Cancelar</a>
+        </div>
     </form>
-    <a href="/ver">Cancelar</a>
-</body>
-</html>
+</div>
+{% endblock %}

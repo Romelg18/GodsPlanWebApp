@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Estudiantes</title>
-</head>
-<body>
-    <h2>Lista de Estudiantes</h2>
-    <a href="/">Inicio</a> | <a href="/agregar">Agregar nuevo estudiante</a>
-
-    <table border="1" cellpadding="5" cellspacing="0">
-        <thead>
+{% extends "layout.html" %}
+{% block title %}Lista de Estudiantes{% endblock %}
+{% block content %}
+<div class="card p-4">
+    <h2 class="mb-4"><i class="bi bi-card-list"></i> Lista de Estudiantes</h2>
+    <table class="table table-hover table-bordered align-middle">
+        <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>Nombre</th>
@@ -32,12 +27,12 @@
                 <td>{{ e.Parroquia_Id_Parroquia }}</td>
                 <td>{{ e.Persona_Id_Persona }}</td>
                 <td>
-                    <a href="/editar/{{ e.Id_Estudiante }}">Editar</a> |
-                    <a href="/eliminar/{{ e.Id_Estudiante }}" onclick="return confirm('¿Estás seguro de eliminar este estudiante?')">Eliminar</a>
+                    <a class="btn btn-sm btn-warning" href="/editar/{{ e.Id_Estudiante }}"><i class="bi bi-pencil"></i></a>
+                    <a class="btn btn-sm btn-danger" href="/eliminar/{{ e.Id_Estudiante }}" onclick="return confirm('¿Eliminar estudiante?')"><i class="bi bi-trash"></i></a>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
-</body>
-</html>
+</div>
+{% endblock %}
