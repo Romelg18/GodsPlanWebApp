@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Estudiantes</title>
+</head>
+<body>
+    <h2>Lista de Estudiantes</h2>
+    <a href="/">Inicio</a> | <a href="/agregar">Agregar nuevo estudiante</a>
+
+    <table border="1" cellpadding="5" cellspacing="0">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Fecha Nacimiento</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Parroquia ID</th>
+                <th>Persona ID</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for e in estudiantes %}
+            <tr>
+                <td>{{ e.Id_Estudiante }}</td>
+                <td>{{ e.Nombre }}</td>
+                <td>{{ e.FechaNacimiento.strftime('%Y-%m-%d') if e.FechaNacimiento else '' }}</td>
+                <td>{{ e.Direccion or '' }}</td>
+                <td>{{ e.Telefono or '' }}</td>
+                <td>{{ e.Parroquia_Id_Parroquia }}</td>
+                <td>{{ e.Persona_Id_Persona }}</td>
+                <td>
+                    <a href="/editar/{{ e.Id_Estudiante }}">Editar</a> |
+                    <a href="/eliminar/{{ e.Id_Estudiante }}" onclick="return confirm('¿Estás seguro de eliminar este estudiante?')">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

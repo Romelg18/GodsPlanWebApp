@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Estudiante</title>
+</head>
+<body>
+    <h2>Editar Estudiante</h2>
+    <form method="POST">
+        <label>Nombre: *</label><br>
+        <input type="text" name="Nombre" value="{{ estudiante.Nombre }}" required><br><br>
+
+        <label>Fecha de Nacimiento:</label><br>
+        <input type="date" name="FechaNacimiento" value="{{ fecha_nacimiento }}"><br><br>
+
+        <label>Dirección:</label><br>
+        <input type="text" name="Direccion" value="{{ estudiante.Direccion or '' }}"><br><br>
+
+        <label>Teléfono:</label><br>
+        <input type="text" name="Telefono" value="{{ estudiante.Telefono or '' }}"><br><br>
+
+        <label>Parroquia ID: *</label><br>
+        <input type="number" name="Parroquia_Id_Parroquia" value="{{ estudiante.Parroquia_Id_Parroquia }}" required><br><br>
+
+        <label>Persona ID: *</label><br>
+        <input type="number" name="Persona_Id_Persona" value="{{ estudiante.Persona_Id_Persona }}" required><br><br>
+
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="/ver">Cancelar</a>
+</body>
+</html>
