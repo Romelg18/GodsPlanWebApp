@@ -84,7 +84,7 @@ def editar_estudiante(id):
                        int(parroquia_id),
                        int(persona_id))
         conn.commit()
-        flash("Estudiante actualizado correctamente", "info")  # 🚨
+        flash("Estudiante actualizado correctamente", "info")  #
         return redirect('/ver')
     else:
         cursor.execute("EXEC persona.sp_GetEstudianteById ?", id)
@@ -100,7 +100,7 @@ def editar_estudiante(id):
 def eliminar_estudiante(id):
     cursor.execute("EXEC persona.sp_DeleteEstudiante ?", id)
     conn.commit()
-    flash("Estudiante eliminado exitosamente", "warning")  # 🚨
+    flash("Estudiante eliminado exitosamente", "warning")  
     return redirect('/ver')
 
 if __name__ == '__main__':
