@@ -23,16 +23,16 @@ Importante: La base de datos esta adjuntada en el envio de la asignacion , envia
 Dichos procedimientos ya se encuentran dentro de la base de datos 
 
 # Instrucciones para ejecutar el proyecto
--Clonar el repositorio
--Crear el entorno virtual: python -m venv env
--Activar el entorno virtual:  .\env\Scripts\activate
--Instalar dependendencias: pip install -r requirements.txt
+- Clonar el repositorio
+- Crear el entorno virtual: python -m venv env
+- Activar el entorno virtual:  .\env\Scripts\activate
+- Instalar dependendencias: pip install -r requirements.txt
 NOTA: Instalar adicionalmente flask con el siguiente comando : pip install flask pyodbc 
 
 *IMPORTANTE*
 
--Configurar el archivo config.json
+- Configurar el archivo config.json
 Dentro del archivo config.json cambiar la linea "name_server": "ROMELLAPTOP\\SQLEXPRESS" por el nombre de servidor propio para que se conecte a sql sin problemas 
 
--Ejecutamos la aplicacion con: python app.py
--Verificamos dirigiendonos a http://127.0.0.1:5000/ en cualquier navegador 
+- Ejecutamos la aplicacion con: python app.py
+- Verificamos dirigiendonos a http://127.0.0.1:5000/ en cualquier navegador 
